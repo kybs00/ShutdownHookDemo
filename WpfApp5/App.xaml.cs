@@ -35,8 +35,7 @@ namespace SessionEndDemo
                 var currentMainWindow = Application.Current.MainWindow;
                 var handle = new WindowInteropHelper(currentMainWindow).Handle;
                 ShutdownBlockReasonCreate(handle, "应用保存数据中，请等待...");
-                //Thread.Sleep(TimeSpan.FromSeconds(10));
-                await Task.Delay(10000);
+                Thread.Sleep(TimeSpan.FromSeconds(10));
                 ShutdownBlockReasonCreate(handle, "应用已保存数据");
                 Thread.Sleep(TimeSpan.FromSeconds(10));
                 ShutdownBlockReasonDestroy(handle);

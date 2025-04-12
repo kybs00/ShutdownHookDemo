@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Runtime.InteropServices;
+using System;
+using System.Windows;
+using System.Windows.Interop;
 
 namespace SessionEndDemo
 {
@@ -11,13 +14,20 @@ namespace SessionEndDemo
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-            
         }
-
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             Loaded -= MainWindow_Loaded;
-            Visibility=Visibility.Collapsed;
+            var handle = new WindowInteropHelper(this).Handle;
+            ShutdownBlockReasonDestroy(handle);
+            ShutdownBlockReasonCreate(handle, "应用保存数据中，请等待...");
+
+            //窗口Hide不影响上面的ShutdownBlockReasonDestroy
+            Hide();
         }
+        [DllImport("user32.dll")]
+        private static extern bool ShutdownBlockReasonCreate(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] string reason);
+        [DllImport("user32.dll")]
+        private static extern bool ShutdownBlockReasonDestroy(IntPtr hWnd);
     }
 }

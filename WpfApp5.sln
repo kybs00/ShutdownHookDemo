@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionEndDemo", "WpfApp5\SessionEndDemo.csproj", "{55100C85-52B4-45D3-BFC9-0A5B4F28465F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsHookDemo", "WindowsHookDemo\WindowsHookDemo.csproj", "{52CF0E89-D877-4FBF-864B-13EC43F693A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighLevelProcessShutdownDemo", "HighLevelProcessShutdownDemo\HighLevelProcessShutdownDemo.csproj", "{1F4D4751-3356-45F0-97E9-601D6A390440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{52CF0E89-D877-4FBF-864B-13EC43F693A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52CF0E89-D877-4FBF-864B-13EC43F693A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52CF0E89-D877-4FBF-864B-13EC43F693A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F4D4751-3356-45F0-97E9-601D6A390440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F4D4751-3356-45F0-97E9-601D6A390440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F4D4751-3356-45F0-97E9-601D6A390440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F4D4751-3356-45F0-97E9-601D6A390440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

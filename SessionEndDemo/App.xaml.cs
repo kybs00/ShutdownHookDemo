@@ -26,14 +26,24 @@ namespace SessionEndDemo
         {
             if (e.Reason == SessionEndReasons.SystemShutdown)
             {
-                var canShutDown = PerformShutdownWork();
-                e.Cancel = !canShutDown;
+                var executeSuccess = ExecuteShutdownWork();
+                e.Cancel = !executeSuccess;
             }
         }
-        private bool PerformShutdownWork()
+        private bool ExecuteShutdownWork()
         {
-            Thread.Sleep(TimeSpan.FromSeconds(70));
-            return true;
+            //Test
+            Thread.Sleep(TimeSpan.FromSeconds(200));
+            return false;
+            try
+            {
+                // XXX
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

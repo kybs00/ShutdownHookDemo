@@ -47,20 +47,20 @@ namespace WindowsHookDemo
         {
             if (msg == WM_QUERYENDSESSION)
             {
-                // 在这里执行你的业务逻辑
-                bool canShutdown = PerformShutdownWork();
-
+                // 可以在这里执行你的业务逻辑
+                bool executeSuccess = ExecuteShutdownWork();
                 // 返回0表示阻止关机，1表示允许关机
                 handled = true;
-                return canShutdown ? (IntPtr)1 : (IntPtr)0;
+                return executeSuccess ? (IntPtr)1 : (IntPtr)0;
             }
-            return IntPtr.Zero;
+            return (IntPtr)1;
         }
 
-        private bool PerformShutdownWork()
+        private bool ExecuteShutdownWork()
         {
             Thread.Sleep(TimeSpan.FromSeconds(20));
-            return true;
+            //测试，默认返回操作失败
+            return false;
         }
 
         [DllImport("user32.dll")]
